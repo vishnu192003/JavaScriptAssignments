@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<head>
+      <title>Argument and Return, No Argument But Return, Argument But No Return and No Argument And No Return</title>
+</head>
+<body>
+   <script>
+    //Function with Argument and Return
+    function calculateCircleArea(radius) {
+        const area = Math.PI * radius * radius;
+        return area;
+    }    
+    const circleRadius = 5;
+    const circleArea = calculateCircleArea(circleRadius);
+    console.log(`The area of a circle with radius ${circleRadius} is ${circleArea.toFixed(2)}`);
+     
+    //Function with No Argument But Return
+
+    function generateRandomNumber() {
+        return Math.random(); 
+    }    
+    const randomValue = generateRandomNumber();
+    console.log(`Random value: ${randomValue.toFixed(4)}`);
+
+    //Function with Argument But No Return
+
+    function greetUser(name) {
+        console.log(`Hello, ${name}!`);
+    }    
+    const userName = "Vishnu";
+    greetUser(userName);
+    
+    //Function with No Argument and No Return
+
+    function printCurrentDate() {
+        const currentDate = new Date();
+        console.log(`Today's date is ${currentDate.toDateString()}`);
+    }    
+    printCurrentDate();
+     </script>
+</body>
+</html>
