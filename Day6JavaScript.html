@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Area of Circle Calculator</title>
+
+    <Style>
+        body {
+            background-color: #000000;
+            background-image: linear-gradient(225deg, #000000 0%, #784BA0 50%, #000000 100%);
+            min-height: 100vh;
+           
+           
+        }
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+        }
+        p {
+            font-size: 2rem;
+            text-align: center;
+        }
+        .container{
+            text-align: center;
+            width: 500px;
+            margin: 0  auto;
+            padding: 20px;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 20px;
+            padding: 1rem;
+            margin-top: 2rem;
+           
+            background-color: #000000;
+            background-image: linear-gradient(225deg, #000000 0%, #784BA0 50%, #000000 100%);
+
+        }
+        .para{
+            font-size: 2rem;
+            text-align: center;
+        }
+        .button_{
+            background-color:#784BA0;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 1.5rem;                 
+        }
+            .placeholder{
+                border-radius: 3px;
+                border: 1px solid black;
+                background-color: transparent;
+
+            }
+            .img{
+                border-radius: 50%;
+                border: 1px solid black;
+            }
+    </Style>
+</head>
+<body>
+    <h1>Area of Circle Calculator</h1>
+   <div class="container">
+    <h1><img class="img" src="/calculator.png" alt="png" height="100"></h1>
+    <form id="circleForm" class="para" >
+        <label for="radius">Radius (in units):</label>
+        <input class="placeholder" type="number" id="radius" required style="margin-bottom: 2rem;"><br>
+
+        <label for="diameter">Diameter (in units):</label>
+        <input class="placeholder" type="number" id="diameter" required><br>
+
+        <button class="button_" type="button" onclick="calculateArea()">Calculate</button>
+    </form>
+    <div id="result">
+        <p>Area of Circle: <span id="areaResult"></span> square units</p>
+    </div>
+
+   </div>
+    <script>
+        function calculateArea() {
+            const radius = parseFloat(document.getElementById('radius').value);
+            const diameter = parseFloat(document.getElementById('diameter').value);
+            const areaRadius = Math.PI * Math.pow(radius, 2);           
+            const areaDiameter = Math.PI * Math.pow(diameter / 2, 2);           
+            document.getElementById('areaResult').textContent = areaRadius || areaDiameter;
+        }
+    </script>
+</body>
+</html>
